@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 · 稳定入口说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9fafb;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #1e293b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 2rem 1.25rem;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02), 0 8px 30px rgba(0, 0, 0, 0.03);
+            padding: 2.5rem 2rem;
+            transition: padding 0.2s ease;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #0a0f1a;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.0625rem;
+            color: #475569;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #eef2f6;
+            color: #1e293b;
+            font-size: 0.8125rem;
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            font-weight: 450;
+            letter-spacing: 0.3px;
+        }
+
+        /* 优势区 —— 更紧凑，卡片留白 */
+        .strength-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 1.5rem;
+            margin: 2.8rem 0;
+        }
+
+        .strength-item {
+            background: #f8fafc;
+            border-radius: 18px;
+            padding: 1.5rem 1.25rem;
+            border: 1px solid #edf2f7;
+        }
+
+        .strength-item h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .strength-item p {
+            font-size: 0.9375rem;
+            color: #4b5563;
+        }
+
+        .strength-item span {
+            font-size: 1.2rem;
+        }
+
+        /* 说明区 – 窄正文, 干净 */
+        .explain-section {
+            margin: 3rem 0 2.5rem;
+        }
+
+        .explain-section h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+        }
+
+        .explain-section p {
+            font-size: 1rem;
+            color: #334155;
+            margin-bottom: 1.25rem;
+            max-width: 640px;
+        }
+
+        .explain-section .inset-note {
+            background: #f1f5f9;
+            border-left: 3px solid #b0c4de;
+            padding: 1rem 1.35rem;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.95rem;
+            color: #1e293b;
+            margin: 1.8rem 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-digest {
+            margin: 2.8rem 0 2rem;
+            border-top: 1px solid #e9edf2;
+            padding-top: 2rem;
+        }
+
+        .faq-digest h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #0f172a;
+        }
+
+        .faq-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: #1e293b;
+        }
+
+        .faq-item p {
+            font-size: 0.9375rem;
+            color: #475569;
+            margin: 0;
+        }
+
+        .faq-digest .more-link {
+            font-size: 0.9rem;
+            color: #2563eb;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.4rem;
+            border-bottom: 1px dotted #94a3b8;
+        }
+
+        .faq-digest .more-link:hover {
+            border-bottom: 1px solid #2563eb;
+        }
+
+        /* 底部链接区 */
+        .footer-links {
+            margin-top: 2.8rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e9edf2;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.75rem 1.5rem;
+            font-size: 0.9375rem;
+            color: #64748b;
+        }
+
+        .footer-links a {
+            color: #1e293b;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 1px solid #94a3b8;
+        }
+
+        .footer-links .brand-link {
+            font-weight: 450;
+            color: #0f172a;
+        }
+
+        .footer-note {
+            font-size: 0.8125rem;
+            color: #94a3b8;
+            margin-top: 0.3rem;
+            width: 100%;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .page {
+                padding: 1.8rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .strength-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .explain-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .faq-digest h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                padding: 1.25rem 1rem;
+            }
+
+            .strength-item {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero -->
+        <div class="hero">
+            <span class="hero-tag">稳定 · 简洁 · 直达</span>
+            <h1>爱游戏体育 · 持续可用的入口</h1>
+            <p>一个不需要每次寻找的页面，把精力放回内容本身。这里只说明一件事：如何通过一个稳定的地址，找到爱游戏体育。</p>
+        </div>
+
+        <!-- 优势区 (卡片) -->
+        <div class="strength-grid">
+            <div class="strength-item">
+                <h3><span>→</span> 保持简单</h3>
+                <p>没有跳转迷宫，没有无效链接。一个入口，长期维护。</p>
+            </div>
+            <div class="strength-item">
+                <h3><span>→</span> 一致体验</h3>
+                <p>页面结构轻量，加载直接，减少中间干扰。</p>
+            </div>
+            <div class="strength-item">
+                <h3><span>→</span> 独立说明</h3>
+                <p>每一条信息都围绕如何使用与识别，不掺杂无关推广。</p>
+            </div>
+            <div class="strength-item">
+                <h3><span>→</span> 留白与克制</h3>
+                <p>视觉上减少冗余，只突出关键路径，降低认知负担。</p>
+            </div>
+        </div>
+
+        <!-- 说明区: 从稳定入口和页面说明角度展开 -->
+        <div class="explain-section">
+            <h2>关于这个页面</h2>
+            <p>
+                很多体育资讯或互动平台，会因为网络或域名调整而改变访问方式。与其每次被动寻找，不如记住一个稳固的入口页——它不复杂，只负责指向。这也是为什么我们单独留出这个说明页：把「怎么找到」和「这是什么」放在一起。
+            </p>
+            <p>
+                本页所描述的 <a href="https://ayx-index-sport.com" class="brand-link" style="font-weight:500; color:#0f172a; text-decoration:underline; text-underline-offset:3px; text-decoration-color:#cbd5e1;">爱游戏体育</a>，是一个以体育内容浏览为主的页面集合。通过上方链接可以直接触达，不需要额外跳转或多次点击。如果你希望有一个干净、少干扰的入口，这个地址可以作为收藏。
+            </p>
+            <div class="inset-note">
+                <strong style="font-weight:500;">提示</strong>：页面地址长期有效。如遇访问变化，本说明页会同步更新指引，但请以实际打开内容为准。
+            </div>
+            <p style="margin-bottom:0;">
+                使用场景可以是日常浏览、信息查阅，或者单纯想保持一个低噪点的访问习惯。我们不鼓励过度依赖单一入口，但一个好记且稳定的地址，确实可以减少很多无用操作。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要（非完整FAQ，克制节选） -->
+        <div class="faq-digest">
+            <h2>常见问题 · 摘要</h2>
+            <div class="faq-item">
+                <strong>这个页面和爱游戏体育是什么关系？</strong>
+                <p>它是描述与入口说明页，本身不承载主内容，仅提供指向和背景介绍。你可以把它看作一个路牌。</p>
+            </div>
+            <div class="faq-item">
+                <strong>为什么需要一个单独的说明页？</strong>
+                <p>为了在地址变化或需要确认时，有一个稳定、内容克制的参考点。也便于快速了解这个入口的用途。</p>
+            </div>
+            <div class="faq-item">
+                <strong>链接会失效吗？</strong>
+                <p>我们尽量保证长期有效。如果未来地址调整，会在此页更新提示，但无法承诺永久不变。</p>
+            </div>
+            <a href="#" class="more-link" onclick="return false;">更多细节 · 暂略</a>
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="footer-links">
+            <span>直达：</span>
+            <a href="https://ayx-index-sport.com" class="brand-link">爱游戏体育</a>
+            <span style="color:#94a3b8;">·</span>
+            <a href="#">关于本站</a>
+            <a href="#">使用说明</a>
+            <div class="footer-note">
+                本页仅作介绍，内容仅供参考，不构成任何保证。
+            </div>
+        </div>
+    </div>
+</body>
+</html>
